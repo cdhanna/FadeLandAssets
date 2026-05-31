@@ -1,0 +1,26 @@
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run validate
+      - name: Verify dist/ is up to date
+        run: |
+          npm run build
+          if ! git diff --quiet -- dist .id-registry.json; then
+            echo "::error::dist/ or .id-registry.json is out of sync with entries/. Run 'npm run build' and commit the result."
+            git diff --stat -- dist .id-registry.json
+            exit 1
+          fi

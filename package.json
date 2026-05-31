@@ -1,0 +1,20 @@
+{
+  "name": "fadeland-catalog",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Curated asset catalog served to the FadeLand Playground",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "validate": "node scripts/validate.mjs",
+    "clean": "rm -rf dist && mkdir -p dist"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5",
+    "music-metadata": "^10.5.0",
+    "jszip": "^3.10.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

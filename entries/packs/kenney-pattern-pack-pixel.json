@@ -1,0 +1,15 @@
+{
+  "kind": "pack",
+  "slug": "kenney-pattern-pack-pixel",
+  "name": "Pattern Pack Pixel",
+  "description": "A pack of seamless pixel-art patterns from Kenney. Useful as backgrounds, tile fills, and UI textures.",
+  "remote": "https://kenney.nl/media/pages/assets/pattern-pack-pixel/65c3f0f0a1-1721640064/kenney_pattern-pack-pixel.zip",
+  "preview": "https://kenney.nl/media/pages/assets/pattern-pack-pixel/481a61c702-1721639978/preview.png",
+  "tags": ["pattern", "pixel", "background", "tile", "kenney"],
+  "include": ["**/*.png"],
+  "exclude": ["**/Sample.png", "**/license.txt", "**/Preview.png", "**/preview*.png"],
+  "license": "CC0-1.0",
+  "attribution": "Kenney.nl",
+  "homepage": "https://kenney.nl/assets/pattern-pack-pixel",
+  "added": "2026-05-30"
+}
