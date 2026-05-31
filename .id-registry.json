@@ -1,8 +1,10 @@
 {
-  "nextId": 4,
+  "nextId": 6,
   "ids": {
     "example-red-square": 1,
     "example-test-pack": 2,
-    "kenney-pattern-pack-pixel": 3
+    "kenney-pattern-pack-pixel": 3,
+    "kenney-card-pack": 4,
+    "subspaceaudio-retro-game-sfx": 5
   }
 }

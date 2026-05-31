@@ -1,0 +1,15 @@
+{
+  "kind": "pack",
+  "slug": "kenney-card-pack",
+  "name": "Card Pack",
+  "description": "A pack of playing cards from Kenney.",
+  "remote": "https://kenney.nl/media/pages/assets/playing-cards-pack/4b345a2a5a-1677495915/kenney_playing-cards-pack.zip",
+  "preview": "https://kenney.nl/media/pages/assets/playing-cards-pack/d075e66535-1677495909/preview.png",
+  "tags": ["card", "game", "tile", "kenney"],
+  "include": ["**/*.png"],
+  "exclude": ["**/Sample.png", "**/license.txt", "**/Preview.png", "**/preview*.png"],
+  "license": "CC0-1.0",
+  "attribution": "Kenney.nl",
+  "homepage": "https://kenney.nl/assets/playing-cards-pack",
+  "added": "2026-05-30"
+}
