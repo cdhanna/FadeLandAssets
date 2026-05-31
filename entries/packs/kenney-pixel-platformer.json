@@ -1,0 +1,15 @@
+{
+  "kind": "pack",
+  "slug": "kenney-pixel-platformer",
+  "name": "Pixel Platformer",
+  "description": "18×18 pixel tileset for classic platformers — terrain, props, characters, parallax backgrounds.",
+  "remote": "https://kenney.nl/media/pages/assets/pixel-platformer/33bb4921eb-1696667883/kenney_pixel-platformer.zip",
+  "preview": "https://kenney.nl/media/pages/assets/pixel-platformer/9354b2aa6b-1696667871/preview.png",
+  "tags": ["pixel", "platformer", "tiles", "18x18", "kenney"],
+  "include": ["**/*.png"],
+  "exclude": ["**/Preview.png", "**/preview*.png", "**/Sample.png", "**/license.txt", "**/License.txt"],
+  "license": "CC0-1.0",
+  "attribution": "Kenney.nl",
+  "homepage": "https://kenney.nl/assets/pixel-platformer",
+  "added": "2026-05-31"
+}

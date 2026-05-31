@@ -1,0 +1,15 @@
+{
+  "kind": "pack",
+  "slug": "kenney-tiny-dungeon",
+  "name": "Tiny Dungeon",
+  "description": "16×16 dungeon tileset — floors, walls, props, items, monsters. Roguelike-ready.",
+  "remote": "https://kenney.nl/media/pages/assets/tiny-dungeon/f8422efb44-1674742415/kenney_tiny-dungeon.zip",
+  "preview": "https://kenney.nl/media/pages/assets/tiny-dungeon/3bb70bd831-1674742409/preview.png",
+  "tags": ["pixel", "dungeon", "tiles", "16x16", "rpg", "roguelike", "kenney"],
+  "include": ["**/*.png"],
+  "exclude": ["**/Preview.png", "**/preview*.png", "**/Sample.png", "**/license.txt", "**/License.txt"],
+  "license": "CC0-1.0",
+  "attribution": "Kenney.nl",
+  "homepage": "https://kenney.nl/assets/tiny-dungeon",
+  "added": "2026-05-31"
+}

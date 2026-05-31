@@ -1,10 +1,14 @@
 {
-  "nextId": 6,
+  "nextId": 10,
   "ids": {
     "example-red-square": 1,
     "example-test-pack": 2,
     "kenney-pattern-pack-pixel": 3,
     "kenney-card-pack": 4,
-    "subspaceaudio-retro-game-sfx": 5
+    "subspaceaudio-retro-game-sfx": 5,
+    "indiedevs-10-track-chiptune": 6,
+    "kenney-pixel-platformer": 7,
+    "kenney-pixel-shmup": 8,
+    "kenney-tiny-dungeon": 9
   }
 }

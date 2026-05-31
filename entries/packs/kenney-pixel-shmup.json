@@ -1,0 +1,15 @@
+{
+  "kind": "pack",
+  "slug": "kenney-pixel-shmup",
+  "name": "Pixel Shmup",
+  "description": "Top-down shoot-em-up sprites — ships, bullets, explosions, power-ups. Classic arcade pixel art style.",
+  "remote": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+  "preview": "https://kenney.nl/media/pages/assets/pixel-shmup/9d1158f9f9-1677495741/preview.png",
+  "tags": ["pixel", "shoot-em-up", "shmup", "arcade", "sprites", "kenney"],
+  "include": ["**/*.png"],
+  "exclude": ["**/Preview.png", "**/preview*.png", "**/Sample.png", "**/license.txt", "**/License.txt"],
+  "license": "CC0-1.0",
+  "attribution": "Kenney.nl",
+  "homepage": "https://kenney.nl/assets/pixel-shmup",
+  "added": "2026-05-31"
+}
