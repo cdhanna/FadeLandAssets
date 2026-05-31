@@ -48,17 +48,20 @@ const MIRROR_OK_LICENSES = new Set([
   'MIT', 'Apache-2.0',
   'BSD-2-Clause', 'BSD-3-Clause',
   'Unlicense', 'WTFPL',
+  'OFL-1.1',                          // SIL Open Font License (standard FOSS font license)
   'public-domain',
 ]);
 
 const IMAGE_EXTS = new Set(['.png', '.jpg', '.jpeg', '.gif', '.bmp', '.webp']);
 const AUDIO_EXTS = new Set(['.wav', '.mp3', '.ogg', '.flac', '.m4a', '.aac']);
+const FONT_EXTS  = new Set(['.ttf', '.otf']);
 
 const MIME_FOR_EXT = {
   '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg',
   '.gif': 'image/gif', '.bmp': 'image/bmp', '.webp': 'image/webp',
   '.wav': 'audio/wav', '.mp3': 'audio/mpeg', '.ogg': 'audio/ogg',
   '.flac': 'audio/flac', '.m4a': 'audio/mp4', '.aac': 'audio/aac',
+  '.ttf': 'font/ttf', '.otf': 'font/otf',
   '.zip': 'application/zip',
 };
 
@@ -69,6 +72,10 @@ const EXT_FOR_MIME = {
   'audio/mpeg': '.mp3', 'audio/mp3': '.mp3',
   'audio/ogg': '.ogg', 'audio/flac': '.flac',
   'audio/mp4': '.m4a', 'audio/aac': '.aac',
+  'font/ttf': '.ttf', 'font/otf': '.otf',
+  'font/sfnt': '.ttf',                        // generic SFNT — covers TTFs served without specific subtype
+  'application/font-sfnt': '.ttf',            // legacy IANA name some hosts still use
+  'application/x-font-ttf': '.ttf',
   'application/zip': '.zip', 'application/x-zip-compressed': '.zip',
 };
 
@@ -186,10 +193,15 @@ function derivedTagsForAudio(info) {
   return tags;
 }
 
+function derivedTagsForFont(ext) {
+  return ['font', ext === '.otf' ? 'otf' : 'ttf'];
+}
+
 function derivedTagsForPack(packSummary) {
   const tags = ['pack'];
   if (packSummary.images > 0) tags.push('images');
   if (packSummary.audio > 0) tags.push('audio');
+  if (packSummary.fonts > 0)  tags.push('fonts');
   return tags;
 }
 
@@ -298,6 +310,7 @@ function buildShards(entries) {
         totalExtractedBytes: e.packSummary.totalExtractedBytes,
         imageCount: e.packSummary.images,
         audioCount: e.packSummary.audio,
+        fontCount:  e.packSummary.fonts,
       });
     }
     shards[shardKey(e.id)].entries[e.id] = base;
@@ -379,6 +392,13 @@ async function processAssetEntry(e) {
     Object.assign(e, await processAudioBytes(fetched.bytes, mime));
     e.thumbSha = null;
     e.allTags = dedupe([...(e.tags ?? []), ...derivedTagsForAudio(e), e.hosting, 'asset']);
+  } else if (FONT_EXTS.has(ext)) {
+    // Fonts are opaque blobs from the catalog's perspective — no dimension
+    // or duration to extract. The Playground's catalog panel renders a
+    // fallback "Aa" glyph for entries with no thumbnail; full font-preview
+    // rendering via FontFace API is a polish item, not needed for v1.
+    e.thumbSha = null;
+    e.allTags = dedupe([...(e.tags ?? []), ...derivedTagsForFont(ext), e.hosting, 'asset']);
   } else {
     throw new Error(`${e.slug}: extension ${ext} isn't a supported asset type`);
   }

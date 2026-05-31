@@ -1,5 +1,5 @@
 {
-  "nextId": 10,
+  "nextId": 13,
   "ids": {
     "example-red-square": 1,
     "example-test-pack": 2,
@@ -9,6 +9,9 @@
     "indiedevs-10-track-chiptune": 6,
     "kenney-pixel-platformer": 7,
     "kenney-pixel-shmup": 8,
-    "kenney-tiny-dungeon": 9
+    "kenney-tiny-dungeon": 9,
+    "kenney-fonts": 10,
+    "pixel-fonts": 11,
+    "press-start-2p": 12
   }
 }

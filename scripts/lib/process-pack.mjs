@@ -12,13 +12,15 @@ import { matchesAny } from './glob.mjs';
 
 const IMAGE_EXTS = new Set(['.png', '.jpg', '.jpeg', '.gif', '.bmp', '.webp']);
 const AUDIO_EXTS = new Set(['.wav', '.mp3', '.ogg', '.flac', '.m4a', '.aac']);
-const ASSET_EXTS = new Set([...IMAGE_EXTS, ...AUDIO_EXTS]);
+const FONT_EXTS  = new Set(['.ttf', '.otf']);
+const ASSET_EXTS = new Set([...IMAGE_EXTS, ...AUDIO_EXTS, ...FONT_EXTS]);
 
 const MIME_FOR_EXT = {
   '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg',
   '.gif': 'image/gif', '.bmp': 'image/bmp', '.webp': 'image/webp',
   '.wav': 'audio/wav', '.mp3': 'audio/mpeg', '.ogg': 'audio/ogg',
   '.flac': 'audio/flac', '.m4a': 'audio/mp4', '.aac': 'audio/aac',
+  '.ttf': 'font/ttf', '.otf': 'font/otf',
 };
 
 function sha256Hex(buf) {
@@ -81,6 +83,8 @@ export async function processPackZip(zipBytes, entry) {
         fileMeta.sampleRate = meta.format.sampleRate ?? null;
         fileMeta.channels = meta.format.numberOfChannels ?? null;
       }
+      // FONT_EXTS need no per-file metadata extraction — they're opaque blobs.
+      // The Playground UI uses the basename to label them.
     } catch (err) {
       // Don't abort the whole pack on one malformed file — record what we know.
       fileMeta.metadataError = err.message;
@@ -97,7 +101,8 @@ export async function processPackZip(zipBytes, entry) {
     fileCount: files.length,
     totalExtractedBytes,
     images: files.filter(f => f.mime?.startsWith('image/')).length,
-    audio: files.filter(f => f.mime?.startsWith('audio/')).length,
+    audio:  files.filter(f => f.mime?.startsWith('audio/')).length,
+    fonts:  files.filter(f => f.mime?.startsWith('font/')).length,
   };
 
   return { zipSha, files, summary };

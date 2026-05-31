@@ -1,0 +1,15 @@
+{
+  "kind": "pack",
+  "slug": "pixel-fonts",
+  "name": "Pixel Fonts (curated)",
+  "description": "Six pixel and retro display TTFs hand-picked from Google Fonts — Press Start 2P, VT323, Silkscreen (Reg + Bold), Jersey 10, Tiny5. All OFL-1.1; per-font license files bundled.",
+  "source": "packs/pixel-fonts.zip",
+  "preview": "packs/pixel-fonts-preview.png",
+  "tags": ["fonts", "typography", "pixel", "retro", "8-bit", "curated"],
+  "include": ["**/*.ttf", "**/*.otf"],
+  "exclude": ["**/OFL-*.txt"],
+  "license": "OFL-1.1",
+  "attribution": "Codeman38, Peter Hull, Jason Kottke, Sarah Daily, gluk (via Google Fonts)",
+  "homepage": "https://github.com/google/fonts/tree/main/ofl",
+  "added": "2026-05-31"
+}

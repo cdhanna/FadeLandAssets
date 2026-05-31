@@ -1,0 +1,11 @@
+{
+  "slug": "press-start-2p",
+  "name": "Press Start 2P",
+  "description": "Classic 8-bit / NES-style display TTF — pixel-perfect at 8pt. Iconic retro game typeface.",
+  "remote": "https://raw.githubusercontent.com/google/fonts/main/ofl/pressstart2p/PressStart2P-Regular.ttf",
+  "tags": ["font", "ttf", "pixel", "8-bit", "retro", "nes", "display"],
+  "license": "OFL-1.1",
+  "attribution": "Codeman38 (cody@zone38.net), via Google Fonts",
+  "homepage": "https://fonts.google.com/specimen/Press+Start+2P",
+  "added": "2026-05-31"
+}

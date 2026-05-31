@@ -1,0 +1,15 @@
+{
+  "kind": "pack",
+  "slug": "kenney-fonts",
+  "name": "Kenney Fonts",
+  "description": "11 retro and pixel TTF typefaces — game-friendly display fonts in a single bundle.",
+  "remote": "https://kenney.nl/media/pages/assets/kenney-fonts/8d5435c213-1677661710/kenney_kenney-fonts.zip",
+  "preview": "https://kenney.nl/media/pages/assets/kenney-fonts/703183582c-1677661704/preview.png",
+  "tags": ["fonts", "typography", "pixel", "retro", "kenney"],
+  "include": ["**/*.ttf", "**/*.otf"],
+  "exclude": ["**/license.txt", "**/License.txt", "**/Preview.png", "**/preview*.png"],
+  "license": "CC0-1.0",
+  "attribution": "Kenney.nl",
+  "homepage": "https://kenney.nl/assets/kenney-fonts",
+  "added": "2026-05-31"
+}
